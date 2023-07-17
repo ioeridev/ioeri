@@ -64,7 +64,7 @@ You can start editing the module by modifying `modules/.../index` file.
 
 ## Contributors
 
-<a href="https://github.com/ioeridev/ioeri/graphs/contributors" >
+<a href="https://github.com/ioeridev/ioeri/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=ioeridev/ioeri" />
 </a>
 
