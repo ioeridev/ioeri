@@ -1,5 +1,5 @@
 # ioeri
-### (for "leading", pronounced /yori/, like "iori" spoken Yoruba)
+(for "leading", pronounced /yori/, like "iori" spoken Yoruba)
 
 `*React library is Required`
 
