@@ -1,0 +1,53 @@
+{
+  "name": "ioeri",
+  "version": "1.8.2",
+  "description": "Functional React components library package module",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "sideEffects": [
+    "*.css"
+  ],
+  "exports": {
+    ".": {
+      "require": "./cjs/index.js",
+      "import": "./index.js",
+      "types": "./index.d.ts"
+    },
+    "./styles.css": "./esm/index.css",
+    "./styles/*": "./esm/styles/*"
+  },
+  "license": "MIT",
+  "author": "Ilham Khoeri <ilkhoeri@gmail.com>",
+  "homepage": "https://github.com/ioeridev#readme",
+  "bugs": {
+    "url": "https://github.com/ioeridev/ioeri/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ioeridev/ioeri.git",
+    "directory": "src/ioeri"
+  },
+  "keywords": [
+    "frontend",
+    "ioeri",
+    "dices",
+    "react",
+    "next",
+    "nextjs",
+    "next.js",
+    "typescript",
+    "ui",
+    "components",
+    "ui-kit",
+    "library",
+    "frontend",
+    "design"
+  ],
+  "peerDependencies": {
+    "next": "^13.3.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
