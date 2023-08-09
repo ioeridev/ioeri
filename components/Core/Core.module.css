@@ -1,0 +1,126 @@
+/* --------------------------------
+* core -> Classes
+-------------------------------- */
+
+.core {
+  --core-scale: 1;
+  --core-ff-default: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial,
+    sans-serif, Apple Color Emoji, Segoe UI Emoji;
+
+  --core-fz-h1: calc(2.125rem * var(--core-scale));
+  --core-fw-h1: 700;
+  --core-lh-h1: 1.3;
+
+  --core-fz-h2: calc(1.625rem * var(--core-scale));
+  --core-fw-h2: 700;
+  --core-lh-h2: 1.35;
+
+  --core-fz-h3: calc(1.375rem * var(--core-scale));
+  --core-fw-h3: 700;
+  --core-lh-h3: 1.4;
+
+  --core-fz-h4: calc(1.125rem * var(--core-scale));
+  --core-fw-h4: 700;
+  --core-lh-h4: 1.45;
+
+  --core-fz-h5: calc(1rem * var(--core-scale));
+  --core-fw-h5: 700;
+  --core-lh-h5: 1.5;
+
+  --core-fz-h6: calc(0.875rem * var(--core-scale));
+  --core-fw-h6: 700;
+  --core-lh-h6: 1.5;
+
+  box-sizing: border-box;
+
+  position: var(--core-pos, relative);
+  display: var(--core-dsp);
+  flex-wrap: var(--core-wrap);
+  justify-content: var(--core-justify);
+  align-items: var(--core-items);
+  align-content: var(--core-content);
+  flex-direction: var(--core-direct);
+  z-index: var(--core-z);
+  gap: var(--core-gap);
+  height: var(--core-h);
+  width: var(--core-w);
+  max-height: var(--core-max-h);
+  max-width: var(--core-max-w);
+  min-height: var(--core-min-h);
+  min-width: var(--core-min-w);
+  padding: var(--core-p);
+  padding-top: var(--core-pt);
+  padding-right: var(--core-pr);
+  padding-bottom: var(--core-pb);
+  padding-left: var(--core-pl);
+  padding-block: var(--core-py);
+  padding-inline: var(--core-px);
+  margin: var(--core-m);
+  margin-top: var(--core-mt);
+  margin-right: var(--core-mr);
+  margin-bottom: var(--core-mb);
+  margin-left: var(--core-ml);
+  margin-block: var(--core-my);
+  margin-inline: var(--core-mx);
+  border-radius: var(--core-rd);
+  cursor: var(--core-csr, auto);
+  color: var(--core-c);
+  background: var(--core-bg);
+  border: var(--core-bd);
+  overflow: var(--core-overfl);
+
+  font-family: var(--core-ff, var(--core-ff-default));
+  font-size: var(--core-fz, var(--core-fz-default));
+  font-weight: var(--core-fw, var(--core-fw-default));
+  line-height: var(--core-lh, var(--core-lh-default));
+  text-transform: var(--core-tt);
+  text-align: var(--core-ta, inherit);
+  text-decoration: var(--core-td, none);
+  letter-spacing: var(--core-lts, normal);
+
+  @mixin hover {
+    color: var(--core-hover-c, var(--core-c));
+    background: var(--core-hover-bg, var(--core-bg));
+    border-color: var(--core-hover-bd, var(--core-bd-c));
+  }
+  &:active {
+    --_iroot-clicked: translateY(0.35px);
+    transform: var(--core-clicked, none);
+  }
+}
+
+strong {
+  --core-fw-default: var(--core-fw-h1);
+  --core-lh-default: var(--core-lh-h1);
+}
+
+q {
+  font-style: italic;
+  &::before {
+    content: open-quote;
+  }
+  &::after {
+    content: close-quote;
+  }
+}
+
+details {
+  & summary:first-of-type {
+    list-style: inside disclosure-closed;
+    &[open] {
+      list-style-type: disclosure-open;
+    }
+  }
+  &::marker {
+    unicode-bidi: isolate;
+    font-variant-numeric: tabular-nums;
+    text-transform: none;
+    text-indent: 0px !important;
+    text-align: start !important;
+    text-align-last: start !important;
+  }
+}
+
+kbd {
+  font-family: monospace !important;
+}
