@@ -4,7 +4,7 @@ For "leading", pronounced /yori/, `🔊` like "iori" (spoken Yoruba).
 
 Functional React - Next.js components library package module.
 
-## Installation:
+## Installation [core - component ui:](https://github.com/ioeridev/ioeri/tree/master)
 
 ```cirru
 npm install ioeri@latest
