@@ -104,16 +104,12 @@
   transition: all 250ms cubic-bezier(0.47, 0.07, 0, 1.05);
 
   padding: var(--NextButton-p);
-  padding-block: var(--NextButton-py);
-  padding-inline: var(--NextButton-px);
-
   margin: var(--NextButton-m);
-  margin-top: var(--NextButton-mt);
-  margin-right: var(--NextButton-mr);
-  margin-bottom: var(--NextButton-mb);
-  margin-left: var(--NextButton-ml);
-  margin-block: var(--NextButton-my);
-  margin-inline: var(--NextButton-mx);
+  margin-block-start: var(--NextButton-my, var(--NextButton-mt));
+  margin-block-end: var(--NextButton-my, var(--NextButton-mb));
+  margin-inline-start: var(--NextButton-mx, var(--NextButton-ml));
+  margin-inline-end: var(--NextButton-mx, var(--NextButton-mr));
+
   top: var(--NextButton-t);
   right: var(--NextButton-r);
   bottom: var(--NextButton-b);
@@ -139,11 +135,16 @@
   background: var(--_NextButton-bg, var(--NextButton-bg));
   border: var(--_NextButton-bd, var(--NextButton-bd));
   color: var(--_NextButton-color, var(--NextButton-color));
-  padding-left: var(--_NextButton-pl, var(--NextButton-px));
-  padding-right: var(--_NextButton-pr, var(--NextButton-px));
   padding-top: var(--_NextButton-pt, var(--NextButton-py));
+  padding-right: var(--_NextButton-pr, var(--NextButton-px));
   padding-bottom: var(--_NextButton-pb, var(--NextButton-py));
+  padding-left: var(--_NextButton-pl, var(--NextButton-px));
   line-height: var(--NextButton-lh, var(--NextButton-line-height));
+
+  padding-block-start: var(--_NextButton-pt, var(--NextButton-py));
+  padding-inline-end: var(--_NextButton-pr, var(--NextButton-px));
+  padding-block-end: var(--_NextButton-pb, var(--NextButton-py));
+  padding-inline-start: var(--_NextButton-pl, var(--NextButton-px));
 
   &[data-compact] {
     display: flex;
@@ -151,7 +152,7 @@
     align-items: center;
     align-content: center;
     justify-content: center;
-    padding: 0;
+    padding: 0px;
 
     --NextButton-height-xs: var(--NextButton-xs);
     --NextButton-height-sm: var(--NextButton-sm);

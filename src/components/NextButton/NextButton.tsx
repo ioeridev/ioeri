@@ -411,7 +411,8 @@ export const NextButton = (props: NextButtonAllProps & arm_NextButtonAllProps) =
     const gradientFrom = gradient?.from ? gradient?.from : 'transparent';
     const gradientVia = gradient?.via ? `${gradient?.via} ,` : '';
     const gradientTo = gradient?.to ? gradient?.to : 'transparent';
-    const armGradient = variant === 'gradient'
+    const armGradient =
+      variant === 'gradient'
         ? `linear-gradient(${gradientDeg}, ${gradientFrom}, ${gradientVia} ${gradientTo})`
         : bg || `var(--NextButton-bg-${variant})`;
     const armBackgound = gradient ? armGradient : bg || `var(--NextButton-bg-${variant})`;
@@ -439,10 +440,10 @@ export const NextButton = (props: NextButtonAllProps & arm_NextButtonAllProps) =
       case 'root':
         styleVars['--NextButton-bg'] = String(armBackgound);
         styleVars['--NextButton-hover'] = String(armHover);
-        styleVars['--NextButton-h'] = String(h || `var(--NextButton-height-${size})`);
-        styleVars['--NextButton-w'] = String(w || `var(--NextButton-width-${size})`);
-        styleVars['--NextButton-px'] = String(px || `var(--NextButton-padding-x-${size})`);
-        styleVars['--NextButton-py'] = String(py || `var(--NextButton-padding-y-${size})`);
+        styleVars['--NextButton-h'] = setVal(h || `var(--NextButton-height-${size})`);
+        styleVars['--NextButton-w'] = setVal(w || `var(--NextButton-width-${size})`);
+        styleVars['--NextButton-px'] = setVal(px || `var(--NextButton-padding-x-${size})`);
+        styleVars['--NextButton-py'] = setVal(py || `var(--NextButton-padding-y-${size})`);
         styleVars['--NextButton-rd'] = setRadius(rd, `var(--NextButton-rd-${filterSize})`);
         styleVars['--NextButton-ff'] = String(ff || 'var(--_NextButton-ff)');
         styleVars['--NextButton-color'] = String(c || `var(--NextButton-c-${variant})`);
@@ -455,26 +456,26 @@ export const NextButton = (props: NextButtonAllProps & arm_NextButtonAllProps) =
 
         bd && (styleVars['--NextButton-bd'] = String(bd));
 
-        p && (styleVars['--NextButton-p'] = String(p));
-        pt && (styleVars['--NextButton-pt'] = String(pt));
-        pr && (styleVars['--NextButton-pr'] = String(pr));
-        pb && (styleVars['--NextButton-pb'] = String(pb));
-        pl && (styleVars['--NextButton-pl'] = String(pl));
+        p && (styleVars['--NextButton-p'] = setVal(p));
+        pt && (styleVars['--NextButton-pt'] = setVal(pt));
+        pr && (styleVars['--NextButton-pr'] = setVal(pr));
+        pb && (styleVars['--NextButton-pb'] = setVal(pb));
+        pl && (styleVars['--NextButton-pl'] = setVal(pl));
 
-        m && (styleVars['--NextButton-m'] = String(m));
-        my && (styleVars['--NextButton-my'] = String(my));
-        mx && (styleVars['--NextButton-mx'] = String(mx));
-        mt && (styleVars['--NextButton-mt'] = String(mt));
-        mr && (styleVars['--NextButton-mr'] = String(mr));
-        mb && (styleVars['--NextButton-mb'] = String(mb));
-        ml && (styleVars['--NextButton-ml'] = String(ml));
+        m && (styleVars['--NextButton-m'] = setVal(m));
+        my && (styleVars['--NextButton-my'] = setVal(my));
+        mx && (styleVars['--NextButton-mx'] = setVal(mx));
+        mt && (styleVars['--NextButton-mt'] = setVal(mt));
+        mr && (styleVars['--NextButton-mr'] = setVal(mr));
+        mb && (styleVars['--NextButton-mb'] = setVal(mb));
+        ml && (styleVars['--NextButton-ml'] = setVal(ml));
 
         z && (styleVars['--NextButton-z'] = String(z));
 
-        t && (styleVars['--NextButton-t'] = String(t));
-        r && (styleVars['--NextButton-r'] = String(r));
-        b && (styleVars['--NextButton-b'] = String(b));
-        l && (styleVars['--NextButton-l'] = String(l));
+        t && (styleVars['--NextButton-t'] = setVal(t));
+        r && (styleVars['--NextButton-r'] = setVal(r));
+        b && (styleVars['--NextButton-b'] = setVal(b));
+        l && (styleVars['--NextButton-l'] = setVal(l));
 
         display && (styleVars['--_NextButton-display'] = String(display));
         items && (styleVars['--NextButton-items'] = String(items));

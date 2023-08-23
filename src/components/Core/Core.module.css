@@ -1,10 +1,4 @@
 .core {
-  --arm-core-p: var(--core-pt, 0) var(--core-pr, 0) var(--core-pb, 0) var(--core-pl, 0);
-  --arm-core-m: var(--core-mt, 0) var(--core-mr, 0) var(--core-mb, 0) var(--core-ml, 0);
-  padding: var(--core-p, var(--arm-core-p));
-  margin: var(--core-m, var(--arm-core-m));
-}
-.core {
   box-sizing: border-box;
   position: var(--core-pos, relative);
   display: var(--core-dsp);
@@ -21,18 +15,16 @@
   max-width: var(--core-max-w);
   min-height: var(--core-min-h);
   min-width: var(--core-min-w);
-  padding-top: var(--core-pt, 0);
-  padding-right: var(--core-pr, 0);
-  padding-bottom: var(--core-pb, 0);
-  padding-left: var(--core-pl, 0);
-  padding-block: var(--core-py, 0);
-  padding-inline: var(--core-px, 0);
-  margin-top: var(--core-mt, 0);
-  margin-right: var(--core-mr, 0);
-  margin-bottom: var(--core-mb, 0);
-  margin-left: var(--core-ml, 0);
-  margin-block: var(--core-my, 0);
-  margin-inline: var(--core-mx, 0);
+  padding: var(--core-p);
+  margin: var(--core-m);
+  padding-block-start: var(--core-py, var(--core-pt));
+  padding-block-end: var(--core-py, var(--core-pb));
+  padding-inline-start: var(--core-px, var(--core-pl));
+  padding-inline-end: var(--core-px, var(--core-pr));
+  margin-block-start: var(--core-my, var(--core-mt));
+  margin-block-end: var(--core-my, var(--core-mb));
+  margin-inline-start: var(--core-mx, var(--core-ml));
+  margin-inline-end: var(--core-mx, var(--core-mr));
   border-radius: var(--core-rd);
   cursor: var(--core-csr, auto);
   color: var(--core-c);
