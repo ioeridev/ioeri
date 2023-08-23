@@ -1,0 +1,98 @@
+.core {
+  --arm-core-p: var(--core-pt, 0) var(--core-pr, 0) var(--core-pb, 0) var(--core-pl, 0);
+  --arm-core-m: var(--core-mt, 0) var(--core-mr, 0) var(--core-mb, 0) var(--core-ml, 0);
+  padding: var(--core-p, var(--arm-core-p));
+  margin: var(--core-m, var(--arm-core-m));
+}
+.core {
+  box-sizing: border-box;
+  position: var(--core-pos, relative);
+  display: var(--core-dsp);
+  flex-wrap: var(--core-wrap);
+  justify-content: var(--core-justify);
+  align-items: var(--core-items);
+  align-content: var(--core-content);
+  flex-direction: var(--core-direct);
+  z-index: var(--core-z);
+  gap: var(--core-gap);
+  height: var(--core-h);
+  width: var(--core-w);
+  max-height: var(--core-max-h);
+  max-width: var(--core-max-w);
+  min-height: var(--core-min-h);
+  min-width: var(--core-min-w);
+  padding-top: var(--core-pt, 0);
+  padding-right: var(--core-pr, 0);
+  padding-bottom: var(--core-pb, 0);
+  padding-left: var(--core-pl, 0);
+  padding-block: var(--core-py, 0);
+  padding-inline: var(--core-px, 0);
+  margin-top: var(--core-mt, 0);
+  margin-right: var(--core-mr, 0);
+  margin-bottom: var(--core-mb, 0);
+  margin-left: var(--core-ml, 0);
+  margin-block: var(--core-my, 0);
+  margin-inline: var(--core-mx, 0);
+  border-radius: var(--core-rd);
+  cursor: var(--core-csr, auto);
+  color: var(--core-c);
+  background: var(--core-bg);
+  border: var(--core-bd);
+  overflow: var(--core-overfl);
+
+  font-family: var(--core-ff, var(--ioeri-ff));
+  font-size: var(--core-fz, var(--core-fz-default));
+  font-weight: var(--core-fw, var(--core-fw-default));
+  line-height: var(--core-lh, var(--core-lh-default));
+  text-transform: var(--core-tt);
+  text-align: var(--core-ta, inherit);
+  --webkit-text-decoration: var(--core-td, none);
+  text-decoration: var(--core-td, none);
+  letter-spacing: var(--core-lts, normal);
+
+  @mixin hover {
+    color: var(--core-hover-c, var(--core-c));
+    background: var(--core-hover-bg, var(--core-bg));
+    border-color: var(--core-hover-bd, var(--core-bd-c));
+  }
+  &:active {
+    --_iroot-clicked: translateY(0.35px);
+    transform: var(--core-clicked, none);
+  }
+}
+
+strong {
+  --core-fw-default: var(--ioeri-fw-h1);
+  --core-lh-default: var(--ioeri-lh-h1);
+}
+
+q {
+  font-style: italic;
+  &::before {
+    content: open-quote;
+  }
+  &::after {
+    content: close-quote;
+  }
+}
+
+details {
+  & summary:first-of-type {
+    list-style: inside disclosure-closed;
+    &[open] {
+      list-style-type: disclosure-open;
+    }
+  }
+  &::marker {
+    unicode-bidi: isolate;
+    font-variant-numeric: tabular-nums;
+    text-transform: none;
+    text-indent: 0px !important;
+    text-align: start !important;
+    text-align-last: start !important;
+  }
+}
+
+kbd {
+  font-family: monospace !important;
+}

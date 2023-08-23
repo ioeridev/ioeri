@@ -1,0 +1,372 @@
+.root {
+  position: relative;
+  display: flex;
+}
+
+.indicator {
+  --indicator-base-position: 0px;
+
+  --indicator-color-default: #ffb03a;
+
+  &[data-indicator='bar'] {
+    --indicator-offset: 8px;
+
+    --indicator-min-h: calc(100% / 10);
+    --indicator-min-w: 2px;
+
+    --indicator-bar-height-t-b: calc(100% / 16);
+    --indicator-bar-height-l-r: calc(100% - 10%);
+
+    --indicator-bar-width-t-b: calc(100% - 10%);
+    --indicator-bar-width-l-r: 2%;
+
+    --indicator-active-size-bar-t-b: scale(1.05, 1.5);
+    --indicator-active-size-bar-l-r: scale(1.6, 1.2);
+
+    &[indicator-position='top'],
+    &[indicator-position='top-start'],
+    &[indicator-position='top-end'],
+    &[indicator-position='bottom'],
+    &[indicator-position='bottom-start'],
+    &[indicator-position='bottom-end'] {
+      --indicator-w-xs: 28%;
+      --indicator-w-sm: 40%;
+      --indicator-w-md: 50%;
+      --indicator-w-lg: 62%;
+      --indicator-w-xl: 72%;
+      --indicator-w-xxl: 84%;
+      --indicator-w-xxxl: 100%;
+
+      --indicator-h-xs: 4px;
+      --indicator-h-sm: 4px;
+      --indicator-h-md: 4px;
+      --indicator-h-lg: 4px;
+      --indicator-h-xl: 4px;
+      --indicator-h-xxl: 4px;
+      --indicator-h-xxxl: 4px;
+
+      --indicator-h-default: 4px;
+      --indicator-w-default: 84%;
+    }
+
+    &[indicator-position='right'],
+    &[indicator-position='right-start'],
+    &[indicator-position='right-end'],
+    &[indicator-position='left'],
+    &[indicator-position='left-start'],
+    &[indicator-position='left-end'] {
+      --indicator-h-xs: 28%;
+      --indicator-h-sm: 40%;
+      --indicator-h-md: 50%;
+      --indicator-h-lg: 62%;
+      --indicator-h-xl: 72%;
+      --indicator-h-xxl: 84%;
+      --indicator-h-xxxl: 100%;
+
+      --indicator-w-xs: 4px;
+      --indicator-w-sm: 4px;
+      --indicator-w-md: 4px;
+      --indicator-w-lg: 4px;
+      --indicator-w-xl: 4px;
+      --indicator-w-xxl: 4px;
+      --indicator-w-xxxl: 4px;
+
+      --indicator-h-default: 84%;
+      --indicator-w-default: 4px;
+    }
+
+    &[indicator-position='top'] {
+      --_indicator-h: var(--indicator-bar-height-t-b);
+      --_indicator-w: var(--indicator-bar-width-t-b);
+      --indicator-height: var(--indicator-top-h);
+      --indicator-width: var(--indicator-top-w);
+      --indicator-top: var(--indicator-top-t);
+      --_indicator-_active-_size: var(--indicator-active-size-bar-t-b);
+    }
+    &[indicator-position='top-start'] {
+      --_indicator-h: var(--indicator-bar-height-t-b);
+      --_indicator-w: var(--indicator-bar-width-t-b);
+      --indicator-height: var(--indicator-top-start-h);
+      --indicator-width: var(--indicator-top-start-w);
+      --indicator-top: var(--indicator-top-start-t);
+      --indicator-left: var(--indicator-base-position);
+      --_indicator-_active-_size: var(--indicator-active-size-bar-t-b);
+    }
+    &[indicator-position='top-end'] {
+      --_indicator-h: var(--indicator-bar-height-t-b);
+      --_indicator-w: var(--indicator-bar-width-t-b);
+      --indicator-height: var(--indicator-top-end-h);
+      --indicator-width: var(--indicator-top-end-w);
+      --indicator-top: var(--indicator-top-end-t);
+      --indicator-right: var(--indicator-base-position);
+      --_indicator-_active-_size: var(--indicator-active-size-bar-t-b);
+    }
+
+    &[indicator-position='right'] {
+      --_indicator-h: var(--indicator-bar-height-l-r);
+      --_indicator-w: var(--indicator-bar-width-l-r);
+      --indicator-height: var(--indicator-right-h);
+      --indicator-width: var(--indicator-right-w);
+      --indicator-right: var(--indicator-right-r);
+      --_indicator-_active-_size: var(--indicator-active-size-bar-l-r);
+    }
+    &[indicator-position='right-start'] {
+      --_indicator-h: var(--indicator-bar-height-l-r);
+      --_indicator-w: var(--indicator-bar-width-l-r);
+      --indicator-height: var(--indicator-right-start-h);
+      --indicator-width: var(--indicator-right-start-w);
+      --indicator-top: var(--indicator-base-position);
+      --indicator-right: var(--indicator-right-start-r);
+      --_indicator-_active-_size: var(--indicator-active-size-bar-l-r);
+    }
+    &[indicator-position='right-end'] {
+      --_indicator-h: var(--indicator-bar-height-l-r);
+      --_indicator-w: var(--indicator-bar-width-l-r);
+      --indicator-height: var(--indicator-right-end-h);
+      --indicator-width: var(--indicator-right-end-w);
+      --indicator-right: var(--indicator-right-end-r);
+      --indicator-bottom: var(--indicator-base-position);
+      --_indicator-_active-_size: var(--indicator-active-size-bar-l-r);
+    }
+
+    &[indicator-position='bottom'] {
+      --_indicator-h: var(--indicator-bar-height-t-b);
+      --_indicator-w: var(--indicator-bar-width-t-b);
+      --indicator-height: var(--indicator-bottom-h);
+      --indicator-width: var(--indicator-bottom-w);
+      --indicator-bottom: var(--indicator-bottom-t);
+      --_indicator-_active-_size: var(--indicator-active-size-bar-t-b);
+    }
+    &[indicator-position='bottom-start'] {
+      --_indicator-h: var(--indicator-bar-height-t-b);
+      --_indicator-w: var(--indicator-bar-width-t-b);
+      --indicator-height: var(--indicator-bottom-start-h);
+      --indicator-width: var(--indicator-bottom-start-w);
+      --indicator-bottom: var(--indicator-bottom-start-b);
+      --indicator-left: var(--indicator-base-position);
+      --_indicator-_active-_size: var(--indicator-active-size-bar-t-b);
+    }
+    &[indicator-position='bottom-end'] {
+      --_indicator-h: var(--indicator-bar-height-t-b);
+      --_indicator-w: var(--indicator-bar-width-t-b);
+      --indicator-height: var(--indicator-bottom-end-h);
+      --indicator-width: var(--indicator-bottom-end-w);
+      --indicator-right: var(--indicator-base-position);
+      --indicator-bottom: var(--indicator-bottom-end-b);
+      --_indicator-_active-_size: var(--indicator-active-size-bar-t-b);
+    }
+
+    &[indicator-position='left'] {
+      --_indicator-h: var(--indicator-bar-height-l-r);
+      --_indicator-w: var(--indicator-bar-width-l-r);
+      --indicator-height: var(--indicator-left-h);
+      --indicator-width: var(--indicator-left-w);
+      --indicator-left: var(--indicator-left-l);
+      --_indicator-_active-_size: var(--indicator-active-size-bar-l-r);
+    }
+    &[indicator-position='left-start'] {
+      --_indicator-h: var(--indicator-bar-height-l-r);
+      --_indicator-w: var(--indicator-bar-width-l-r);
+      --indicator-height: var(--indicator-left-start-h);
+      --indicator-width: var(--indicator-left-start-w);
+      --indicator-top: var(--indicator-base-position);
+      --indicator-left: var(--indicator-left-start-l);
+      --_indicator-_active-_size: var(--indicator-active-size-bar-l-r);
+    }
+    &[indicator-position='left-end'] {
+      --_indicator-h: var(--indicator-bar-height-l-r);
+      --_indicator-w: var(--indicator-bar-width-l-r);
+      --indicator-height: var(--indicator-left-end-h);
+      --indicator-width: var(--indicator-left-end-w);
+      --indicator-bottom: var(--indicator-base-position);
+      --indicator-left: var(--indicator-left-end-l);
+      --_indicator-_active-_size: var(--indicator-active-size-bar-l-r);
+    }
+  }
+
+  &[data-indicator='dot'] {
+    --indicator-h-xs: 8px;
+    --indicator-h-sm: 12px;
+    --indicator-h-md: 16px;
+    --indicator-h-lg: 20px;
+    --indicator-h-xl: 26px;
+    --indicator-h-xxl: 32px;
+    --indicator-h-xxxl: 42px;
+
+    --indicator-w-xs: 8px;
+    --indicator-w-sm: 12px;
+    --indicator-w-md: 16px;
+    --indicator-w-lg: 20px;
+    --indicator-w-xl: 26px;
+    --indicator-w-xxl: 32px;
+    --indicator-w-xxxl: 42px;
+
+    --indicator-h-default: 16px;
+    --indicator-w-default: 16px;
+
+    --indicator-offset: 6px;
+
+    --indicator-min-h: 8px;
+    --indicator-min-w: 8px;
+
+    --indicator-active-size-dot: scale(1.28);
+
+    &[indicator-position='top'] {
+      --indicator-height: var(--indicator-top-h);
+      --indicator-width: var(--indicator-top-w);
+      --indicator-top: var(--indicator-top-t);
+      --_indicator-_active-_size: var(--indicator-active-size-dot);
+    }
+    &[indicator-position='top-start'] {
+      --indicator-height: var(--indicator-top-start-h);
+      --indicator-width: var(--indicator-top-start-w);
+      --indicator-top: var(--indicator-top-start-t);
+      --indicator-left: var(--indicator-top-start-l);
+      --_indicator-_active-_size: var(--indicator-active-size-dot);
+    }
+    &[indicator-position='top-end'] {
+      --indicator-height: var(--indicator-top-end-h);
+      --indicator-width: var(--indicator-top-end-w);
+      --indicator-top: var(--indicator-top-end-t);
+      --indicator-right: var(--indicator-top-end-r);
+      --_indicator-_active-_size: var(--indicator-active-size-dot);
+    }
+
+    &[indicator-position='right'] {
+      --indicator-height: var(--indicator-right-h);
+      --indicator-width: var(--indicator-right-w);
+      --indicator-right: var(--indicator-right-r);
+      --_indicator-_active-_size: var(--indicator-active-size-dot);
+    }
+    &[indicator-position='right-start'] {
+      --indicator-height: var(--indicator-right-start-h);
+      --indicator-width: var(--indicator-right-start-w);
+      --indicator-top: var(--indicator-right-start-t);
+      --indicator-right: var(--indicator-right-start-r);
+      --_indicator-_active-_size: var(--indicator-active-size-dot);
+    }
+    &[indicator-position='right-end'] {
+      --indicator-height: var(--indicator-right-end-h);
+      --indicator-width: var(--indicator-right-end-w);
+      --indicator-right: var(--indicator-right-end-r);
+      --indicator-bottom: var(--indicator-right-end-b);
+      --_indicator-_active-_size: var(--indicator-active-size-dot);
+    }
+
+    &[indicator-position='bottom'] {
+      --indicator-height: var(--indicator-bottom-h);
+      --indicator-width: var(--indicator-bottom-w);
+      --indicator-bottom: var(--indicator-bottom-b);
+      --_indicator-_active-_size: var(--indicator-active-size-dot);
+    }
+    &[indicator-position='bottom-start'] {
+      --indicator-height: var(--indicator-bottom-start-h);
+      --indicator-width: var(--indicator-bottom-start-w);
+      --indicator-bottom: var(--indicator-bottom-start-b);
+      --indicator-left: var(--indicator-bottom-start-l);
+      --_indicator-_active-_size: var(--indicator-active-size-dot);
+    }
+    &[indicator-position='bottom-end'] {
+      --indicator-height: var(--indicator-bottom-end-h);
+      --indicator-width: var(--indicator-bottom-end-w);
+      --indicator-right: var(--indicator-bottom-end-r);
+      --indicator-bottom: var(--indicator-bottom-end-b);
+      --_indicator-_active-_size: var(--indicator-active-size-dot);
+    }
+
+    &[indicator-position='left'] {
+      --indicator-height: var(--indicator-left-h);
+      --indicator-width: var(--indicator-left-w);
+      --indicator-left: var(--indicator-left-l);
+      --_indicator-_active-_size: var(--indicator-active-size-dot);
+    }
+    &[indicator-position='left-start'] {
+      --indicator-height: var(--indicator-left-start-h);
+      --indicator-width: var(--indicator-left-start-w);
+      --indicator-top: var(--indicator-left-start-t);
+      --indicator-left: var(--indicator-left-start-l);
+      --_indicator-_active-_size: var(--indicator-active-size-dot);
+    }
+    &[indicator-position='left-end'] {
+      --indicator-height: var(--indicator-left-end-h);
+      --indicator-width: var(--indicator-left-end-w);
+      --indicator-bottom: var(--indicator-left-end-b);
+      --indicator-left: var(--indicator-left-end-l);
+      --_indicator-_active-_size: var(--indicator-active-size-dot);
+    }
+  }
+}
+
+@keyframes indicatorKeyframes {
+  0% {
+    box-shadow: var(--tw-shadow-color, var(--indicator-c)) 0px 0px 1.5px 4px;
+    opacity: 0.65;
+  }
+  100% {
+    box-shadow: var(--tw-shadow-color, var(--indicator-c)) 0px 0px 0.5px 0.5px;
+    opacity: 0;
+  }
+}
+
+.indicator {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  place-items: center;
+  justify-items: center;
+  align-content: center;
+
+  &::before {
+    content: '';
+    z-index: 1111;
+    border-radius: 999px;
+    position: absolute;
+    background: var(--indicator-c);
+    min-height: var(--_indicator-min-h, var(--indicator-min-h));
+    min-width: var(--_indicator-min-w, var(--indicator-min-w));
+    max-height: var(--_indicator-max-h, var(--indicator-max-h));
+    max-width: var(--_indicator-max-w, var(--indicator-max-w));
+    height: var(--indicator-height);
+    width: var(--indicator-width);
+    top: calc(var(--indicator-top) * -1);
+    right: calc(var(--indicator-right) * -1);
+    bottom: calc(var(--indicator-bottom) * -1);
+    left: calc(var(--indicator-left) * -1);
+    box-shadow: 0 0 0 var(--indicator-bd-w) var(--tw-shadow-color, var(--indicator-bd-c));
+    pointer-events: auto;
+    cursor: pointer;
+    box-sizing: border-box;
+  }
+
+  &[indicator-active] {
+    &::after {
+      content: '';
+      z-index: 999;
+      position: absolute;
+      border-radius: 999px;
+      background: var(--indicator-c);
+      min-height: var(--_indicator-min-h, var(--indicator-min-h));
+      min-width: var(--_indicator-min-w, var(--indicator-min-w));
+      max-height: var(--_indicator-max-h, var(--indicator-max-h));
+      max-width: var(--_indicator-max-w, var(--indicator-max-w));
+      height: var(--indicator-height);
+      width: var(--indicator-width);
+      top: calc(var(--indicator-top) * -1);
+      right: calc(var(--indicator-right) * -1);
+      bottom: calc(var(--indicator-bottom) * -1);
+      left: calc(var(--indicator-left) * -1);
+      animation: 1.25s ease-in-out 0s infinite normal none running indicatorKeyframes;
+      pointer-events: auto;
+      cursor: pointer;
+      box-sizing: border-box;
+    }
+  }
+
+  &:focus {
+    &::before,
+    &::after {
+      outline-width: 0px !important;
+      border: 0 solid transparent;
+    }
+  }
+}

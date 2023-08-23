@@ -1,0 +1,11 @@
+export declare function setVars(size: unknown, prefix?: string): string;
+export declare function stringVars(size: unknown, prefix?: string): string;
+export declare function valVars(value: unknown, prefix?: unknown): string;
+export declare function setVal(value: unknown, prefix?: unknown): string;
+export declare function setSize(size: unknown, prefix: unknown): string;
+export declare function setColor(color: unknown, prefix: unknown): string;
+export declare function setRadius(size: unknown, prefix: unknown): string;
+export declare function setLength(size: unknown, prefix: unknown): string;
+export declare function setSpacing(size: unknown): string;
+export declare function setFontSize(size: unknown): string;
+export declare function setShadow(size: unknown): string;
