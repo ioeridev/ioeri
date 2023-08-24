@@ -681,6 +681,8 @@ export const Animated = (props: AnimatedAllProps) => {
           handleArrowB && (styleVars['--arrow-of-b'] = String(handleArrowB));
           handleArrowL && (styleVars['--arrow-of-l'] = String(handleArrowL));
 
+          trigger === 'hover' && (styleVars['--po-plc-cntn'] = String(''));
+
           return styleVars;
 
         default:
@@ -703,7 +705,12 @@ export const Animated = (props: AnimatedAllProps) => {
       className,
       classNames?.trigger
     );
-    const POstyle = { ...getStyleVars('core'), ...style, ...styles?.trigger };
+    const POstyle = {
+      ...getStyleVars('core'),
+      ...getStylePopOverVars('popover'),
+      ...style,
+      ...styles?.trigger,
+    };
 
     const POpopoverClass = cnx(
       [

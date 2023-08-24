@@ -682,6 +682,7 @@ const Animated = (props) => {
           handleArrowR && (styleVars["--arrow-of-r"] = String(handleArrowR));
           handleArrowB && (styleVars["--arrow-of-b"] = String(handleArrowB));
           handleArrowL && (styleVars["--arrow-of-l"] = String(handleArrowL));
+          trigger === "hover" && (styleVars["--po-plc-cntn"] = String(""));
           return styleVars;
         default:
           return {};
@@ -701,7 +702,7 @@ const Animated = (props) => {
       className,
       classNames == null ? void 0 : classNames.trigger
     );
-    const POstyle = __spreadValues(__spreadValues(__spreadValues({}, getStyleVars("core")), style), styles == null ? void 0 : styles.trigger);
+    const POstyle = __spreadValues(__spreadValues(__spreadValues(__spreadValues({}, getStyleVars("core")), getStylePopOverVars("popover")), style), styles == null ? void 0 : styles.trigger);
     const POpopoverClass = cnx.cnx(
       [
         "ioeri_Animated_pop-over_pop-over",
