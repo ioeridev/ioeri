@@ -681,7 +681,7 @@ export const Animated = (props: AnimatedAllProps) => {
           handleArrowB && (styleVars['--arrow-of-b'] = String(handleArrowB));
           handleArrowL && (styleVars['--arrow-of-l'] = String(handleArrowL));
 
-          trigger === 'hover' && (styleVars['--po-plc-cntn'] = String(''));
+          trigger === 'hover' && (styleVars['--po-plc-cntn'] = String('""'));
 
           return styleVars;
 
