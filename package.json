@@ -1,6 +1,6 @@
 {
   "name": "ioeri",
-  "version": "1.81.5",
+  "version": "1.81.6",
   "description": "Functional React components library package module",
   "main": "index.js",
   "types": "index.d.ts",
