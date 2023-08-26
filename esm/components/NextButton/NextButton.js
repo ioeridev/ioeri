@@ -61,6 +61,9 @@ const NextButton = (props) => {
     c,
     bg,
     bd,
+    hoverbg,
+    hoverbd,
+    hoverc,
     rd,
     display,
     items,
@@ -126,6 +129,9 @@ const NextButton = (props) => {
     "c",
     "bg",
     "bd",
+    "hoverbg",
+    "hoverbd",
+    "hoverc",
     "rd",
     "display",
     "items",
@@ -186,7 +192,7 @@ const NextButton = (props) => {
     switch (order) {
       case "root":
         styleVars["--NextButton-bg"] = String(armBackgound);
-        styleVars["--NextButton-hover"] = String(armHover);
+        styleVars["--NextButton-hover-bg"] = String(hoverbg || armHover);
         styleVars["--NextButton-h"] = setVal(h || `var(--NextButton-height-${size})`);
         styleVars["--NextButton-w"] = setVal(w || `var(--NextButton-width-${size})`);
         styleVars["--NextButton-px"] = setVal(px || `var(--NextButton-padding-x-${size})`);
@@ -195,6 +201,8 @@ const NextButton = (props) => {
         styleVars["--NextButton-ff"] = String(ff || "var(--_NextButton-ff)");
         styleVars["--NextButton-color"] = String(c || `var(--NextButton-c-${variant})`);
         variant === "outline" && (styleVars["box-shadow"] = "0 0 0 1px #fdd040");
+        hoverbd && (styleVars["--NextButton-hover-bd"] = String(hoverbd));
+        hoverc && (styleVars["--NextButton-hover-c"] = String(hoverc));
         justify && (styleVars["--NextButton-justify"] = String(justify));
         bd && (styleVars["--NextButton-bd"] = String(bd));
         p && (styleVars["--NextButton-p"] = setVal(p));
@@ -300,7 +308,7 @@ const NextButton = (props) => {
   props.disabled && (additionalProps["data-disabled"] = "true");
   !compact && (additionalProps["data-orientation"] = `${orientation}`);
   additionalProps["data-size"] = `${size}`;
-  additionalProps.variant = variant;
+  additionalProps["data-variant"] = variant;
   if (compact) {
     additionalProps["data-compact"] = "true";
   } else {
@@ -334,10 +342,10 @@ const NextButton = (props) => {
       borderWidth: getStyleIndicator == null ? void 0 : getStyleIndicator.borderWidth,
       c: (getStyleIndicator == null ? void 0 : getStyleIndicator.color) || indicatorColor,
       h: getStyleIndicator == null ? void 0 : getStyleIndicator.height,
-      maxH: getStyleIndicator == null ? void 0 : getStyleIndicator.maxH,
-      maxW: getStyleIndicator == null ? void 0 : getStyleIndicator.maxW,
-      minH: getStyleIndicator == null ? void 0 : getStyleIndicator.minH,
-      minW: getStyleIndicator == null ? void 0 : getStyleIndicator.minW,
+      mah: getStyleIndicator == null ? void 0 : getStyleIndicator.mah,
+      maw: getStyleIndicator == null ? void 0 : getStyleIndicator.maw,
+      mih: getStyleIndicator == null ? void 0 : getStyleIndicator.mih,
+      miw: getStyleIndicator == null ? void 0 : getStyleIndicator.miw,
       offset: (getStyleIndicator == null ? void 0 : getStyleIndicator.offset) || indicatorOffset,
       size: (getStyleIndicator == null ? void 0 : getStyleIndicator.size) || indicatorSize,
       style: styles == null ? void 0 : styles.indicator,

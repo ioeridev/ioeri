@@ -63,10 +63,10 @@ const Core = (props) => {
     mx,
     h,
     w,
-    minH,
-    minW,
-    maxH,
-    maxW,
+    mih,
+    miw,
+    mah,
+    maw,
     ff,
     fz,
     fw,
@@ -118,10 +118,10 @@ const Core = (props) => {
     "mx",
     "h",
     "w",
-    "minH",
-    "minW",
-    "maxH",
-    "maxW",
+    "mih",
+    "miw",
+    "mah",
+    "maw",
     "ff",
     "fz",
     "fw",
@@ -187,10 +187,10 @@ const Core = (props) => {
           styleVars["--core-ml"] = setVal(ml);
           styleVars["--core-my"] = setVal(my);
           styleVars["--core-mx"] = setVal(mx);
-          styleVars["--core-min-h"] = setVal(minH);
-          styleVars["--core-min-w"] = setVal(minW);
-          styleVars["--core-max-h"] = setVal(maxH);
-          styleVars["--core-max-w"] = setVal(maxW);
+          styleVars["--core-min-h"] = setVal(mih);
+          styleVars["--core-min-w"] = setVal(miw);
+          styleVars["--core-max-h"] = setVal(mah);
+          styleVars["--core-max-w"] = setVal(maw);
           ff && (styleVars["--core-ff"] = String(ff));
           tt && (styleVars["--core-tt"] = String(tt));
           ta && (styleVars["--core-ta"] = String(ta));

@@ -41,10 +41,10 @@ export const Animated = (props: AnimatedAllProps) => {
     mx,
     h,
     w,
-    minH,
-    minW,
-    maxH,
-    maxW,
+    mih,
+    miw,
+    mah,
+    maw,
     ff,
     fz,
     fw,
@@ -141,10 +141,10 @@ export const Animated = (props: AnimatedAllProps) => {
           styleVars['--animated-my'] = setVal(my);
           styleVars['--animated-mx'] = setVal(mx);
 
-          styleVars['--animated-min-h'] = setVal(minH);
-          styleVars['--animated-min-w'] = setVal(minW);
-          styleVars['--animated-max-h'] = setVal(maxH);
-          styleVars['--animated-max-w'] = setVal(maxW);
+          styleVars['--animated-min-h'] = setVal(mih);
+          styleVars['--animated-min-w'] = setVal(miw);
+          styleVars['--animated-max-h'] = setVal(mah);
+          styleVars['--animated-max-w'] = setVal(maw);
 
           ff && (styleVars['--animated-ff'] = String(ff));
           tt && (styleVars['--animated-tt'] = String(tt));
@@ -690,38 +690,6 @@ export const Animated = (props: AnimatedAllProps) => {
       }
     };
 
-    const PORootClass = cnx(
-      ['ioeri_Animated_pop-over_root', classes.popoverroot],
-      classNames?.root
-    );
-
-    const POTriggerClass = cnx(
-      [
-        'ioeri_Animated_pop-over_trigger',
-        classes.popovertrigger,
-        classes.popoverhead,
-        classes.animated,
-      ],
-      className,
-      classNames?.trigger
-    );
-    const POstyle = {
-      ...getStyleVars('core'),
-      ...getStylePopOverVars('popover'),
-      ...style,
-      ...styles?.trigger,
-    };
-
-    const POpopoverClass = cnx(
-      [
-        'ioeri_Animated_pop-over_pop-over',
-        classes.popoverdropdown,
-        show && classes.popoverbody,
-        withArrow && classes.popoverArrow,
-      ],
-      classNames?.popover
-    );
-
     // Variabel untuk menyimpan properti tambahan
     const additionalProps: { [key: string]: string } = {};
     show && (additionalProps['data-popover-open'] = 'true');
@@ -730,7 +698,12 @@ export const Animated = (props: AnimatedAllProps) => {
     additionalProps['data-variant'] = `${getStylePlacement?.variant || variant}`;
 
     return (
-      <div ref={ref} className={PORootClass} style={styles?.root} {...additionalProps}>
+      <div
+        ref={ref}
+        className={cnx(['ioeri-Animated pop-over-root', classes.popoverroot], classNames?.root)}
+        style={styles?.root}
+        {...additionalProps}
+      >
         <div
           onClick={handleClick}
           onMouseEnter={handleMouseEnter}
@@ -739,8 +712,20 @@ export const Animated = (props: AnimatedAllProps) => {
           onKeyDown={(e) => e.key === 'Enter' && handleClick()}
           role="button"
           tabIndex={0}
-          className={POTriggerClass}
-          style={POstyle}
+          className={cnx(
+            [
+              'ioeri-Animated pop-over-trigger',
+              classes.popovertrigger,
+              classes.popoverhead,
+              classes.animated,
+            ],
+            classNames?.trigger
+          )}
+          style={{
+            ...getStylePopOverVars('popover'),
+            ...style,
+            ...styles?.trigger,
+          }}
           {...popoverProps}
         >
           {children}
@@ -749,9 +734,19 @@ export const Animated = (props: AnimatedAllProps) => {
           <div
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
-            aria-label={`pop-over_${trigger}`}
-            className={POpopoverClass}
+            aria-label={`popover-${trigger}`}
+            className={cnx(
+              [
+                'ioeri-Animated pop-over-popover',
+                classes.popoverdropdown,
+                show && classes.popoverbody,
+                withArrow && classes.popoverArrow,
+              ],
+              className,
+              classNames?.popover
+            )}
             style={{
+              ...getStyleVars('core'),
               ...getStylePopOverVars('popover'),
               ...styles?.popover,
             }}

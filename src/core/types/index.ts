@@ -167,7 +167,7 @@ export type NamedColor =
   | 'yellowgreen';
 
 /** Initials Values */
-export type _STRING = (string & {});
+export type _STRING = string & {};
 
 export type InitialSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'xxxl';
 
@@ -606,7 +606,7 @@ export interface ViewPortProps {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/font-family
    */
-  minH?: CSSProperties['minHeight'];
+  mih?: CSSProperties['minHeight'];
   /**
    * The **`min-width`** CSS property sets the minimum width of an element. It prevents the used value of the `width` property from becoming smaller than the value specified for `min-width`.
    *
@@ -616,7 +616,7 @@ export interface ViewPortProps {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/font-size
    */
-  minW?: CSSProperties['minWidth'];
+  miw?: CSSProperties['minWidth'];
   /**
    * The **`max-height`** CSS property sets the maximum height of an element. It prevents the used value of the `height` property from becoming larger than the value specified for `max-height`.
    *
@@ -626,7 +626,7 @@ export interface ViewPortProps {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/font-family
    */
-  maxH?: CSSProperties['maxHeight'];
+  mah?: CSSProperties['maxHeight'];
   /**
    * The **`min-block-size`** CSS property defines the minimum horizontal or vertical size of an element's block, depending on its writing mode. It corresponds to either the `min-width` or the `min-height` property, depending on the value of `writing-mode`.
    *
@@ -636,7 +636,7 @@ export interface ViewPortProps {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/font-size
    */
-  maxW?: CSSProperties['maxWidth'];
+  maw?: CSSProperties['maxWidth'];
   /**
    * The **`p`** | `padding` CSS shorthand property sets the padding area on all four sides of an element at once.
    *

@@ -352,6 +352,9 @@ export const NextButton = (props: NextButtonAllProps & arm_NextButtonAllProps) =
     c,
     bg,
     bd,
+    hoverbg,
+    hoverbd,
+    hoverc,
     rd,
     display,
     items,
@@ -439,7 +442,7 @@ export const NextButton = (props: NextButtonAllProps & arm_NextButtonAllProps) =
     switch (order) {
       case 'root':
         styleVars['--NextButton-bg'] = String(armBackgound);
-        styleVars['--NextButton-hover'] = String(armHover);
+        styleVars['--NextButton-hover-bg'] = String(hoverbg || armHover);
         styleVars['--NextButton-h'] = setVal(h || `var(--NextButton-height-${size})`);
         styleVars['--NextButton-w'] = setVal(w || `var(--NextButton-width-${size})`);
         styleVars['--NextButton-px'] = setVal(px || `var(--NextButton-padding-x-${size})`);
@@ -448,10 +451,10 @@ export const NextButton = (props: NextButtonAllProps & arm_NextButtonAllProps) =
         styleVars['--NextButton-ff'] = String(ff || 'var(--_NextButton-ff)');
         styleVars['--NextButton-color'] = String(c || `var(--NextButton-c-${variant})`);
 
-        // TODO: by variant
         variant === 'outline' && (styleVars['box-shadow'] = '0 0 0 1px #fdd040');
 
-        // TODO: by user
+        hoverbd && (styleVars['--NextButton-hover-bd'] = String(hoverbd));
+        hoverc && (styleVars['--NextButton-hover-c'] = String(hoverc));
         justify && (styleVars['--NextButton-justify'] = String(justify));
 
         bd && (styleVars['--NextButton-bd'] = String(bd));
@@ -576,7 +579,7 @@ export const NextButton = (props: NextButtonAllProps & arm_NextButtonAllProps) =
   props.disabled && (additionalProps['data-disabled'] = 'true');
   !compact && (additionalProps['data-orientation'] = `${orientation}`);
   additionalProps['data-size'] = `${size}`;
-  additionalProps.variant = variant;
+  additionalProps['data-variant'] = variant;
   if (compact) {
     additionalProps['data-compact'] = 'true';
   } else {
@@ -633,10 +636,10 @@ export const NextButton = (props: NextButtonAllProps & arm_NextButtonAllProps) =
           borderWidth={getStyleIndicator?.borderWidth}
           c={getStyleIndicator?.color || indicatorColor}
           h={getStyleIndicator?.height}
-          maxH={getStyleIndicator?.maxH}
-          maxW={getStyleIndicator?.maxW}
-          minH={getStyleIndicator?.minH}
-          minW={getStyleIndicator?.minW}
+          mah={getStyleIndicator?.mah}
+          maw={getStyleIndicator?.maw}
+          mih={getStyleIndicator?.mih}
+          miw={getStyleIndicator?.miw}
           offset={getStyleIndicator?.offset || indicatorOffset}
           size={getStyleIndicator?.size || indicatorSize}
           style={styles?.indicator}

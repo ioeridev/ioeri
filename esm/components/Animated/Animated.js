@@ -64,10 +64,10 @@ const Animated = (props) => {
     mx,
     h,
     w,
-    minH,
-    minW,
-    maxH,
-    maxW,
+    mih,
+    miw,
+    mah,
+    maw,
     ff,
     fz,
     fw,
@@ -120,10 +120,10 @@ const Animated = (props) => {
     "mx",
     "h",
     "w",
-    "minH",
-    "minW",
-    "maxH",
-    "maxW",
+    "mih",
+    "miw",
+    "mah",
+    "maw",
     "ff",
     "fz",
     "fw",
@@ -193,10 +193,10 @@ const Animated = (props) => {
           styleVars["--animated-ml"] = setVal(ml);
           styleVars["--animated-my"] = setVal(my);
           styleVars["--animated-mx"] = setVal(mx);
-          styleVars["--animated-min-h"] = setVal(minH);
-          styleVars["--animated-min-w"] = setVal(minW);
-          styleVars["--animated-max-h"] = setVal(maxH);
-          styleVars["--animated-max-w"] = setVal(maxW);
+          styleVars["--animated-min-h"] = setVal(mih);
+          styleVars["--animated-min-w"] = setVal(miw);
+          styleVars["--animated-max-h"] = setVal(mah);
+          styleVars["--animated-max-w"] = setVal(maw);
           ff && (styleVars["--animated-ff"] = String(ff));
           tt && (styleVars["--animated-tt"] = String(tt));
           ta && (styleVars["--animated-ta"] = String(ta));
@@ -681,60 +681,62 @@ const Animated = (props) => {
           return {};
       }
     };
-    const PORootClass = cnx(
-      ["ioeri_Animated_pop-over_root", classes.popoverroot],
-      classNames == null ? void 0 : classNames.root
-    );
-    const POTriggerClass = cnx(
-      [
-        "ioeri_Animated_pop-over_trigger",
-        classes.popovertrigger,
-        classes.popoverhead,
-        classes.animated
-      ],
-      className,
-      classNames == null ? void 0 : classNames.trigger
-    );
-    const POstyle = __spreadValues(__spreadValues(__spreadValues(__spreadValues({}, getStyleVars("core")), getStylePopOverVars("popover")), style), styles == null ? void 0 : styles.trigger);
-    const POpopoverClass = cnx(
-      [
-        "ioeri_Animated_pop-over_pop-over",
-        classes.popoverdropdown,
-        show && classes.popoverbody,
-        withArrow && classes.popoverArrow
-      ],
-      classNames == null ? void 0 : classNames.popover
-    );
     const additionalProps = {};
     show && (additionalProps["data-popover-open"] = "true");
     additionalProps["data-trigger"] = `${trigger}`;
     additionalProps["data-placement"] = `${(getStylePlacement == null ? void 0 : getStylePlacement.placement) || placement}`;
     additionalProps["data-variant"] = `${(getStylePlacement == null ? void 0 : getStylePlacement.variant) || variant}`;
-    return /* @__PURE__ */ React.createElement("div", __spreadValues({ ref, className: PORootClass, style: styles == null ? void 0 : styles.root }, additionalProps), /* @__PURE__ */ React.createElement(
+    return /* @__PURE__ */ React.createElement(
       "div",
       __spreadValues({
-        onClick: handleClick,
-        onMouseEnter: handleMouseEnter,
-        onMouseLeave: handleMouseLeave,
-        "aria-label": `trigger-${trigger}`,
-        onKeyDown: (e) => e.key === "Enter" && handleClick(),
-        role: "button",
-        tabIndex: 0,
-        className: POTriggerClass,
-        style: POstyle
-      }, popoverProps),
-      children
-    ), show && /* @__PURE__ */ React.createElement(
-      "div",
-      {
-        onMouseEnter: handleMouseEnter,
-        onMouseLeave: handleMouseLeave,
-        "aria-label": `pop-over_${trigger}`,
-        className: POpopoverClass,
-        style: __spreadValues(__spreadValues({}, getStylePopOverVars("popover")), styles == null ? void 0 : styles.popover)
-      },
-      popover
-    ));
+        ref,
+        className: cnx(["ioeri-Animated pop-over-root", classes.popoverroot], classNames == null ? void 0 : classNames.root),
+        style: styles == null ? void 0 : styles.root
+      }, additionalProps),
+      /* @__PURE__ */ React.createElement(
+        "div",
+        __spreadValues({
+          onClick: handleClick,
+          onMouseEnter: handleMouseEnter,
+          onMouseLeave: handleMouseLeave,
+          "aria-label": `trigger-${trigger}`,
+          onKeyDown: (e) => e.key === "Enter" && handleClick(),
+          role: "button",
+          tabIndex: 0,
+          className: cnx(
+            [
+              "ioeri-Animated pop-over-trigger",
+              classes.popovertrigger,
+              classes.popoverhead,
+              classes.animated
+            ],
+            classNames == null ? void 0 : classNames.trigger
+          ),
+          style: __spreadValues(__spreadValues(__spreadValues({}, getStylePopOverVars("popover")), style), styles == null ? void 0 : styles.trigger)
+        }, popoverProps),
+        children
+      ),
+      show && /* @__PURE__ */ React.createElement(
+        "div",
+        {
+          onMouseEnter: handleMouseEnter,
+          onMouseLeave: handleMouseLeave,
+          "aria-label": `popover-${trigger}`,
+          className: cnx(
+            [
+              "ioeri-Animated pop-over-popover",
+              classes.popoverdropdown,
+              show && classes.popoverbody,
+              withArrow && classes.popoverArrow
+            ],
+            className,
+            classNames == null ? void 0 : classNames.popover
+          ),
+          style: __spreadValues(__spreadValues(__spreadValues({}, getStyleVars("core")), getStylePopOverVars("popover")), styles == null ? void 0 : styles.popover)
+        },
+        popover
+      )
+    );
   }
   if (type === "running-text-1") {
     const _i = rest, {

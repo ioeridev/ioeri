@@ -61,7 +61,8 @@ export type DetailsProps = React.DetailedHTMLProps<
   HTMLDetailsElement
 >;
 export type SummaryProps = React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
-export type AnchorProps = AnchorTargetsProps & React.AnchorHTMLAttributes<HTMLAnchorElement>;
+export type AnchorProps = AnchorTargetsProps &
+  Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, 'target'>;
 export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement>;
 export type DivProps = React.DetailedHTMLProps<
   React.HTMLAttributes<HTMLDivElement>,

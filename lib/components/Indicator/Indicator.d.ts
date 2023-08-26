@@ -36,7 +36,7 @@ type arm_DESTRUCTURING_getIndicatorStyleVarsProps = {
      * `default syntax` : box-shadow : `borderColor` 0 0 0 `borderWidth`px
      */
     borderColor?: arm_Color;
-} & SizeProps & Pick<ViewPortProps, 'h' | 'w' | 'minH' | 'maxH' | 'minW' | 'maxW'>;
+} & SizeProps & Pick<ViewPortProps, 'h' | 'w' | 'mih' | 'mah' | 'miw' | 'maw'>;
 export type DESTRUCTURING_getIndicatorStyleVarsProps = {
     /**
      * `color` untuk mengatur `warna indikator` | `warna bg ::before`

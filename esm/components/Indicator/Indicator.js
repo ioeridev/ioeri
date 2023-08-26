@@ -45,10 +45,10 @@ const Indicator = (props) => {
     bordered,
     borderColor,
     borderWidth,
-    minH,
-    maxH,
-    minW,
-    maxW,
+    mih,
+    mah,
+    miw,
+    maw,
     active,
     type = "dot",
     position = "right-start"
@@ -65,10 +65,10 @@ const Indicator = (props) => {
     "bordered",
     "borderColor",
     "borderWidth",
-    "minH",
-    "maxH",
-    "minW",
-    "maxW",
+    "mih",
+    "mah",
+    "miw",
+    "maw",
     "active",
     "type",
     "position"
@@ -100,10 +100,10 @@ const Indicator = (props) => {
         styleVars["--indicator-c"] = String(c != null ? c : "var(--indicator-color-default)");
         bordered && (styleVars["--indicator-bd-w"] = String(borderWidth || "1px"));
         bordered && (styleVars["--indicator-bd-c"] = String(borderColor || "#1a1b1e"));
-        styleVars["--_indicator-min-h"] = String(minH != null ? minH : "var(--indicator-min-h)");
-        styleVars["--_indicator-min-w"] = String(minW != null ? minW : "var(--indicator-min-w)");
-        styleVars["--_indicator-max-h"] = String(maxH != null ? maxH : "var(--indicator-max-h)");
-        styleVars["--_indicator-max-w"] = String(maxW != null ? maxW : "var(--indicator-max-w)");
+        styleVars["--_indicator-min-h"] = String(mih != null ? mih : "var(--indicator-min-h)");
+        styleVars["--_indicator-min-w"] = String(miw != null ? miw : "var(--indicator-min-w)");
+        styleVars["--_indicator-max-h"] = String(mah != null ? mah : "var(--indicator-max-h)");
+        styleVars["--_indicator-max-w"] = String(maw != null ? maw : "var(--indicator-max-w)");
         return styleVars;
       default:
         return {};

@@ -50,7 +50,7 @@ type arm_DESTRUCTURING_getIndicatorStyleVarsProps = {
    */
   borderColor?: arm_Color;
 } & SizeProps &
-  Pick<ViewPortProps, 'h' | 'w' | 'minH' | 'maxH' | 'minW' | 'maxW'>;
+  Pick<ViewPortProps, 'h' | 'w' | 'mih' | 'mah' | 'miw' | 'maw'>;
 
 export type DESTRUCTURING_getIndicatorStyleVarsProps = {
   /**
@@ -170,10 +170,10 @@ export const Indicator = (props: IndicatorProps) => {
     bordered,
     borderColor,
     borderWidth,
-    minH,
-    maxH,
-    minW,
-    maxW,
+    mih,
+    mah,
+    miw,
+    maw,
     active,
     type = 'dot',
     position = 'right-start',
@@ -212,10 +212,10 @@ export const Indicator = (props: IndicatorProps) => {
         bordered && (styleVars['--indicator-bd-w'] = String(borderWidth || '1px'));
         bordered && (styleVars['--indicator-bd-c'] = String(borderColor || '#1a1b1e'));
 
-        styleVars['--_indicator-min-h'] = String(minH ?? 'var(--indicator-min-h)');
-        styleVars['--_indicator-min-w'] = String(minW ?? 'var(--indicator-min-w)');
-        styleVars['--_indicator-max-h'] = String(maxH ?? 'var(--indicator-max-h)');
-        styleVars['--_indicator-max-w'] = String(maxW ?? 'var(--indicator-max-w)');
+        styleVars['--_indicator-min-h'] = String(mih ?? 'var(--indicator-min-h)');
+        styleVars['--_indicator-min-w'] = String(miw ?? 'var(--indicator-min-w)');
+        styleVars['--_indicator-max-h'] = String(mah ?? 'var(--indicator-max-h)');
+        styleVars['--_indicator-max-w'] = String(maw ?? 'var(--indicator-max-w)');
 
         return styleVars;
 

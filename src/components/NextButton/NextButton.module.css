@@ -225,7 +225,9 @@
 
   @mixin hover {
     &:not([data-loading]):not(:disabled):not([data-disabled]) {
-      --_NextButton-bg: var(--NextButton-hover);
+      --_NextButton-bg: var(--NextButton-hover-bg);
+      --_NextButton-bd: var(--NextButton-hover-bd);
+      --_NextButton-color: var(--NextButton-hover-c);
     }
   }
 

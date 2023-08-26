@@ -61,10 +61,10 @@ const OpenCloseButton = (props) => {
     l,
     h,
     w,
-    minH,
-    maxH,
-    minW,
-    maxW,
+    mih,
+    mah,
+    miw,
+    maw,
     p,
     pt,
     pr,
@@ -109,10 +109,10 @@ const OpenCloseButton = (props) => {
     "l",
     "h",
     "w",
-    "minH",
-    "maxH",
-    "minW",
-    "maxW",
+    "mih",
+    "mah",
+    "miw",
+    "maw",
     "p",
     "pt",
     "pr",
@@ -177,10 +177,10 @@ const OpenCloseButton = (props) => {
         r && (styleVars["--oc-r"] = setVars.setVal(r));
         b && (styleVars["--oc-b"] = setVars.setVal(b));
         l && (styleVars["--oc-l"] = setVars.setVal(l));
-        minH && (styleVars["--oc-min-h"] = setVars.setVal(minH));
-        minW && (styleVars["--oc-min-w"] = setVars.setVal(minW));
-        maxH && (styleVars["--oc-max-h"] = setVars.setVal(maxH));
-        maxW && (styleVars["--oc-max-w"] = setVars.setVal(maxW));
+        mih && (styleVars["--oc-min-h"] = setVars.setVal(mih));
+        miw && (styleVars["--oc-min-w"] = setVars.setVal(miw));
+        mah && (styleVars["--oc-max-h"] = setVars.setVal(mah));
+        maw && (styleVars["--oc-max-w"] = setVars.setVal(maw));
         ff && (styleVars["--oc-ff"] = String(ff));
         if (fz === "h1") {
           styleVars["--oc-fz"] = setVars.setVal(hand_fz);

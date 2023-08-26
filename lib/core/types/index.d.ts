@@ -8,7 +8,7 @@ export type Fallback<T> = {
 export type Commons = 'inherit' | 'initial' | 'revert' | 'unset';
 export type NamedColor = 'aliceblue' | 'antiquewhite' | 'aqua' | 'aquamarine' | 'azure' | 'beige' | 'bisque' | 'black' | 'blanchedalmond' | 'blue' | 'blueviolet' | 'brown' | 'burlywood' | 'cadetblue' | 'chartreuse' | 'chocolate' | 'coral' | 'cornflowerblue' | 'cornsilk' | 'crimson' | 'currentColor' | 'currentcolor' | 'cyan' | 'darkblue' | 'darkcyan' | 'darkgoldenrod' | 'darkgray' | 'darkgreen' | 'darkgrey' | 'darkkhaki' | 'darkmagenta' | 'darkolivegreen' | 'darkorange' | 'darkorchid' | 'darkred' | 'darksalmon' | 'darkseagreen' | 'darkslateblue' | 'darkslategray' | 'darkslategrey' | 'darkturquoise' | 'darkviolet' | 'deeppink' | 'deepskyblue' | 'dimgray' | 'dimgrey' | 'dodgerblue' | 'firebrick' | 'floralwhite' | 'forestgreen' | 'fuchsia' | 'gainsboro' | 'ghostwhite' | 'gold' | 'goldenrod' | 'gray' | 'green' | 'greenyellow' | 'grey' | 'honeydew' | 'hotpink' | 'indianred' | 'indigo' | 'ivory' | 'khaki' | 'lavender' | 'lavenderblush' | 'lawngreen' | 'lemonchiffon' | 'lightblue' | 'lightcoral' | 'lightcyan' | 'lightgoldenrodyellow' | 'lightgray' | 'lightgreen' | 'lightgrey' | 'lightpink' | 'lightsalmon' | 'lightseagreen' | 'lightskyblue' | 'lightslategray' | 'lightslategrey' | 'lightsteelblue' | 'lightyellow' | 'lime' | 'limegreen' | 'linen' | 'magenta' | 'maroon' | 'mediumaquamarine' | 'mediumblue' | 'mediumorchid' | 'mediumpurple' | 'mediumseagreen' | 'mediumslateblue' | 'mediumspringgreen' | 'mediumturquoise' | 'mediumvioletred' | 'midnightblue' | 'mintcream' | 'mistyrose' | 'moccasin' | 'navajowhite' | 'navy' | 'oldlace' | 'olive' | 'olivedrab' | 'orange' | 'orangered' | 'orchid' | 'palegoldenrod' | 'palegreen' | 'paleturquoise' | 'palevioletred' | 'papayawhip' | 'peachpuff' | 'peru' | 'pink' | 'plum' | 'powderblue' | 'purple' | 'rebeccapurple' | 'red' | 'rosybrown' | 'royalblue' | 'saddlebrown' | 'salmon' | 'sandybrown' | 'seagreen' | 'seashell' | 'sienna' | 'silver' | 'skyblue' | 'slateblue' | 'slategray' | 'slategrey' | 'snow' | 'springgreen' | 'steelblue' | 'tan' | 'teal' | 'thistle' | 'tomato' | 'transparent' | 'turquoise' | 'violet' | 'wheat' | 'white' | 'whitesmoke' | 'yellow' | 'yellowgreen';
 /** Initials Values */
-export type _STRING = (string & {});
+export type _STRING = string & {};
 export type InitialSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'xxxl';
 export type InitialFz = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 export type InitialCompactSize = InitialSize | 'auto' | 'fit-content' | 'max-content' | 'min-content' | number | (string & {});
@@ -391,7 +391,7 @@ export interface ViewPortProps {
      *
      * @see https://developer.mozilla.org/docs/Web/CSS/font-family
      */
-    minH?: CSSProperties['minHeight'];
+    mih?: CSSProperties['minHeight'];
     /**
      * The **`min-width`** CSS property sets the minimum width of an element. It prevents the used value of the `width` property from becoming smaller than the value specified for `min-width`.
      *
@@ -401,7 +401,7 @@ export interface ViewPortProps {
      *
      * @see https://developer.mozilla.org/docs/Web/CSS/font-size
      */
-    minW?: CSSProperties['minWidth'];
+    miw?: CSSProperties['minWidth'];
     /**
      * The **`max-height`** CSS property sets the maximum height of an element. It prevents the used value of the `height` property from becoming larger than the value specified for `max-height`.
      *
@@ -411,7 +411,7 @@ export interface ViewPortProps {
      *
      * @see https://developer.mozilla.org/docs/Web/CSS/font-family
      */
-    maxH?: CSSProperties['maxHeight'];
+    mah?: CSSProperties['maxHeight'];
     /**
      * The **`min-block-size`** CSS property defines the minimum horizontal or vertical size of an element's block, depending on its writing mode. It corresponds to either the `min-width` or the `min-height` property, depending on the value of `writing-mode`.
      *
@@ -421,7 +421,7 @@ export interface ViewPortProps {
      *
      * @see https://developer.mozilla.org/docs/Web/CSS/font-size
      */
-    maxW?: CSSProperties['maxWidth'];
+    maw?: CSSProperties['maxWidth'];
     /**
      * The **`p`** | `padding` CSS shorthand property sets the padding area on all four sides of an element at once.
      *
