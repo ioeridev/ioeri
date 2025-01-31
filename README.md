@@ -1,4 +1,4 @@
-# ioeri <br> This package has been deprecated
+# ~~ioeri~~ <br> ${{\color{red}\Huge{\textsf{This\ package\ has\ been\ deprecated\ \}}}}\$
 
 ## Author message:
 
